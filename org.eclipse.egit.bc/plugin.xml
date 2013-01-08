@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">   
+     <objectContribution
+            adaptable="true"
+            id="org.eclipse.egit.ui.resourceContributions"
+            objectClass="org.eclipse.core.resources.IResource">
+         <filter name="projectPersistentProperty"
+               value="org.eclipse.team.core.repository=org.eclipse.egit.core.GitProvider">
+         </filter>
+          <action
+               class="org.eclipse.egit.bc.BeyondCompareWithPreviousAction"
+               definitionId="org.eclipse.egit.ui.team.CompareWithPrevious"
+               enablesFor="1"
+               id="org.eclipse.egit.bc.BeyondCompareWithPreviousAction"
+               label="%BeyondCompareWithPreviousAction.label"
+               menubarPath="compareWithMenu/gitBCCompareWithGroup"/>
+          <action
+               class="org.eclipse.egit.bc.BeyondCompareWithHeadAction"
+               id="org.eclipse.egit.bc.BeyondCompareWithHeadAction"
+               label="%BeyondCompareWithHeadAction_label"
+               menubarPath="compareWithMenu/gitBCCompareWithGroup"/>      
+          <action
+               class="org.eclipse.egit.bc.BeyondCompareWithCommitAction"
+               id="org.eclipse.egit.bc.BeyondCompareWithCommitAction"
+               label="%BeyondCompareWithCommitAction.label"
+               menubarPath="compareWithMenu/gitBCCompareWithGroup"/>
+          <action
+               class="org.eclipse.egit.bc.BeyondCompareWithRefAction"
+               id="org.eclipse.egit.ec.BeyondCompareWithRefAction"
+               label="%BeyondCompareWithBranchOrTagAction.label"
+               menubarPath="compareWithMenu/gitBCCompareWithGroup"/>     
+       </objectContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipse.egit.ui.GitPreferences"
+            class="org.eclipse.egit.bc.preferences.BeyondCompareEgitPreferencePage"
+            id="org.eclipse.egit.ui.bc.preferences.BeyondCompareEgitPreferencePage"
+            name="%BeyondCompareEgitPreferencePage.name">
+         <keywordReference
+               id="org.eclipse.egit.ui.keyword.git">
+         </keywordReference>
+      </page>
+   </extension>
+</plugin>
