@@ -35,12 +35,13 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.PlatformObject;
 import org.eclipse.egit.core.AdapterUtils;
 import org.eclipse.egit.core.project.RepositoryMapping;
-import org.eclipse.egit.ui.UIText;
+import org.eclipse.egit.ui.internal.UIText;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.TextSelection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jgit.diff.DiffConfig;
 import org.eclipse.jgit.diff.DiffEntry;
 import org.eclipse.jgit.diff.DiffEntry.ChangeType;
 import org.eclipse.jgit.diff.RenameDetector;
@@ -402,7 +403,9 @@ public abstract class BeyondCompareRepositoryActionHandler extends AbstractHandl
 		RevWalk rw = new RevWalk(repository);
 		try {
 			if (path.length() > 0) {
-				FollowFilter filter = FollowFilter.create(path);
+				DiffConfig diffConfig = repository.getConfig().get(
+						DiffConfig.KEY);
+				FollowFilter filter = FollowFilter.create(path, diffConfig);
 				rw.setTreeFilter(filter);
 			}
 
