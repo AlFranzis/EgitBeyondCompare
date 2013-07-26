@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>al.franzis.eclipse</groupId>
+  <artifactId>org.eclipse.egit.bc.update</artifactId>
+  <version>1.0.0</version>
+  <packaging>eclipse-repository</packaging>
+  <repositories>
+    <!-- P2 repositories used by Tycho to resolve OSGi dependencies -->
+    <repository>
+        <id>kepler</id>
+        <layout>p2</layout>
+        <url>http://download.eclipse.org/releases/kepler</url>
+    </repository>
+    <repository>
+        <id>galileoTest</id>
+        <layout>p2</layout>
+        <url>http://download.eclipse.org/eclipse/updates/3.6-JUnit-Tests/</url>
+    </repository>
+  </repositories>
+   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+            <!-- Enable <resolver> so Tycho uses P2 repositories specified in the <repositories>
+            section above to resolve OSGi dependencies -->
+            <resolver>p2</resolver>
+            <pomDependencies>consider</pomDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <properties> 
+    <tycho-version>0.18.0</tycho-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties> 
+  
+</project>
