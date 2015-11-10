@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>al.franzis.eclipse</groupId>
   <artifactId>org.eclipse.egit.bc.feature</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>eclipse-feature</packaging>
   <repositories>
     <!-- P2 repositories used by Tycho to resolve OSGi dependencies -->
@@ -41,7 +41,7 @@
     </plugins>
   </build>
   <properties> 
-    <tycho-version>0.18.0</tycho-version>
+    <tycho-version>0.18.1</tycho-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties> 
 </project>

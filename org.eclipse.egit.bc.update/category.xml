@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.egit.bc.feature_1.0.0.jar" id="org.eclipse.egit.bc.feature" version="1.0.0">
+   <feature url="features/org.eclipse.egit.bc.feature_1.0.0.jar" id="org.eclipse.egit.bc.feature" version="1.0.1">
       <category name="EGitBeyondCompare"/>
    </feature>
    <category-def name="EGitBeyondCompare" label="EGitBeyondCompare"/>

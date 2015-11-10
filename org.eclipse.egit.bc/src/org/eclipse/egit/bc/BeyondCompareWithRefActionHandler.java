@@ -56,7 +56,7 @@ public class BeyondCompareWithRefActionHandler extends BeyondCompareRepositoryAc
 					Repository localRepo = mapping.getRepository();
 					RevWalk rw = new RevWalk(localRepo);
 					RevCommit commit = rw.parseCommit(commitId);
-					rw.release();
+					RevWalkUtil.close(rw);
 
 					String rightFilePath = BeyondCompareUtil.getCompareFilePath(repoRelativeBasePath, commit, localRepo);
 					String leftFilePath = baseFile.getLocation().toFile().getAbsolutePath();
