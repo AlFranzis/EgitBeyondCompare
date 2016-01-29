@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.egit.bc
 Bundle-SymbolicName: org.eclipse.egit.bc;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.11
 Bundle-Localization: plugin
 Bundle-Activator: org.eclipse.egit.bc.Activator
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)",

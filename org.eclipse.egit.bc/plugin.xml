@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
+<?eclipse version="3.4"?>
 <plugin>
+  
+  <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.eclipse.egit.bc.BeyondCompareWithHeadAction"
+            class="org.eclipse.egit.bc.BeyondCompareWithHeadActionHandler">
+      </handler>
+      <handler
+            commandId="org.eclipse.egit.bc.BeyondCompareWithPreviousAction"
+            class="org.eclipse.egit.bc.BeyondCompareWithPreviousActionHandler">
+      </handler>
+   </extension>
+  
+  <extension point="org.eclipse.ui.commands">
+    <command name="Compare with HEAD Beyond Compare (GIT)" categoryId="org.eclipse.egit.ui.commandCategory" id="org.eclipse.egit.bc.BeyondCompareWithHeadAction">
+    </command>
+    <command name="Compare with Previous Beyond Compare (GIT)" categoryId="org.eclipse.egit.ui.commandCategory" id="org.eclipse.egit.bc.BeyondCompareWithPreviousAction">
+    </command>
+  </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+        <key sequence="M1+M2+C"
+            commandId="org.eclipse.egit.bc.BeyondCompareWithHeadAction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"/>
+    </extension>
+
    <extension point="org.eclipse.ui.popupMenus">   
      <objectContribution
             adaptable="true"
