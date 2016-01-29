@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.egit.bc.feature"
       label="org.eclipse.egit.bc.feature"
-      version="1.0.0">
+      version="1.0.1">
 
    <description url="https://github.com/AlFranzis/EgitBeyondCompare">
       Eclipse EGit Beyond Compare integration
@@ -20,7 +20,7 @@
          id="org.eclipse.egit.bc"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.0.1"
          unpack="false"/>
 
 </feature>
