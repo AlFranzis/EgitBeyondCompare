@@ -7,13 +7,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
   <groupId>al.franzis.eclipse</groupId>
   <artifactId>org.eclipse.egit.bc</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <version>1.0.11</version> 
+  <version>1.0.1</version> 
   <repositories>
     <!-- P2 repositories used by Tycho to resolve OSGi dependencies -->
     <repository>
-        <id>mars</id>
+        <id>kepler</id>
         <layout>p2</layout>
-        <url>http://download.eclipse.org/releases/mars</url>
+        <url>http://download.eclipse.org/releases/kepler</url>
     </repository>
     <repository>
         <id>galileoTest</id>
@@ -76,7 +76,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
   <dependencies>
   </dependencies>
   <properties> 
-    <tycho-version>0.18.0</tycho-version>
+    <tycho-version>0.18.1</tycho-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties> 
 </project>
